@@ -39,31 +39,21 @@ public class homework20_1 {
 
       myScanner.close();
    }
-
-   // Insert value into the linked list in sorted order (ascending)
    public static void Sorted(LinkedList myList, int value) {
       ListNode myNode = new ListNode(value);
 
-      // insert at head if list is empty or value is smallest
       if (myList.head == null || value < myList.head.value) {
          myNode.next = myList.head;
          myList.head = myNode;
          return;
       }
-
-      // otherwise, find the correct spot
       ListNode current = myList.head;
       while (current.next != null && current.next.value <= value) {
          current = current.next;
       }
-
-      // insert after current
       myNode.next = current.next;
       current.next = myNode;
    }
-
-   // Remove duplicate values from a sorted linked list
-   // (keep a single node for each value)
    public static void deleteDuplicates(LinkedList llist) {
       if (llist.head == null) return;
 
@@ -71,7 +61,6 @@ public class homework20_1 {
 
       while (current != null && current.next != null) {
          if (current.value == current.next.value) {
-            // skip the duplicate node
             current.next = current.next.next;
          } else {
             current = current.next;
