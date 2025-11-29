@@ -14,17 +14,38 @@ input: 1,1,1,2,3
 output: head-->1-->2-->3-->null
 
 Please complete the following program to fullfil the function.
+
+Will Huff
 */
-public class homework20_1
-{
-   public static void main(String[] args)
-   {
-      //add your code here
-   
+
+import java.util.*
+public class homework20_1{
+   public static void main(String[] args){
+      Scanner myScanner = new Scanner(System.in);
+      LinkedList myList = new LinkedList();
+
+      for (int i = 1; i < 5; i++){
+         int myInt = myScanner.nextInt();
+         Sorted(myList, myInt);
+      }
+      deleteDuplicates(myList);
+      
    }
-   public static void deleteDuplicates(LinkedList llist)
-   {
-      //add your code here
+
+   public static void Sorted(LinkedList myList, myInt value){
+      ListNode myNode = new ListNode (value);
+
+      if (myList.head == null || value < myList.head.value) {
+         myNode.next = myList.head
+            myList.head = myNode;
+            return;
+      }
+      
+      
+   }
+   public static void deleteDuplicates(LinkedList llist){
+      
+      
    }
 
 }
